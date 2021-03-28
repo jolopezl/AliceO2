@@ -51,3 +51,10 @@ o2_add_executable(trap2raw
                                         O2::CommonUtils
 										O2::DataFormatsTRD
                                         Boost::program_options)
+
+o2_add_test(PileupTool
+            SOURCES test/testPileupTool.cxx
+            COMPONENT_NAME trd
+            PUBLIC_LINK_LIBRARIES O2::TRDSimulation
+            ENVIRONMENT VMCWORKDIR=${CMAKE_BINARY_DIR}/stage
+            LABELS trd)
